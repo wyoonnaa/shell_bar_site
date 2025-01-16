@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Shell Logo" class="logo-image">
+      <span class="logo-text">SHELL</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="contacts.html">Contacts</a></li>
+        <li><a href="registration.html">Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Welcome, Admin!</h1>
+    <h2>Table Status</h2>
+    <ul id="admin-table-status"></ul>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Shell Bar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Проверяем роль пользователя в sessionStorage
+    const users = JSON.parse(sessionStorage.getItem("users"));
+    const currentUser = users.find((u) => u.phone === "+1234");  // Пример для проверки Admin по телефону
+
+    if (currentUser && currentUser.role === "admin") {
+      // Показать информацию о столах
+      const tableStatus = document.getElementById("admin-table-status");
+      
+      const database = {
+        tables: [
+          { id: 1, capacity: 4, isBooked: true, bookedBy: "Guest1", time: "18:00" },
+          { id: 2, capacity: 6, isBooked: false, bookedBy: null, time: null },
+          { id: 3, capacity: 2, isBooked: true, bookedBy: "Guest2", time: "19:00" },
+        ],
+      };
+
+      // Функция обновления состояния панели администратора
+      function updateAdminPanel() {
+        tableStatus.innerHTML = "";
+        database.tables.forEach((table) => {
+          if (table.isBooked) {
+            const li = document.createElement("li");
+            li.textContent = `Table ${table.id}: Booked by ${table.bookedBy} at ${table.time}`;
+            tableStatus.appendChild(li);
+          }
+        });
+      }
+
+      updateAdminPanel();
+    } else {
+      // Если пользователь не администратор, перенаправляем его
+      window.location.href = "index.html";
+    }
+  </script>
+  <script src="/Users/mac/Desktop/3_course/veb/попытка 3/scrypt.js"></script>
+
+</body>
+</html>

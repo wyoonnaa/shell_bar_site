@@ -1,0 +1,239 @@
+
+main {
+  padding: 30px; /* Добавляем отступы для основного контента */
+}
+
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f7e9ce;
+  font-size: 16px;
+}
+
+.welcome-message {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.top-container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.left-container,
+.middle-container {
+  background-color: #2b2836;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  width: 48%;
+}
+
+.left-container h2,
+.middle-container h2 {
+  color: #f7e9ce;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.left-container label,
+.middle-container label {
+  color: #c3b9a9;
+  margin-bottom: 5px;
+}
+
+.left-container input,
+.middle-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: #3b3849;
+  color: #f7e9ce;
+  font-size: 16px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.left-container button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7e9ce;
+  color: #1d1b27;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+.left-container button:hover {
+  background-color: #e0d3b9;
+}
+
+.middle-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.middle-container li {
+  background-color: #3b3849;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  color: #f7e9ce;
+}
+
+.middle-container button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #f7e9ce;
+  color: #1d1b27;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.middle-container button:hover {
+  background-color: #e0d3b9;
+}
+
+
+/* Контейнер для изображения и текста */
+/* Контейнер для изображения и текста */
+.lardg-container2 {
+  display: flex; /* Используем flex для выравнивания элементов */
+  flex-direction: column; /* Вертикальное размещение элементов */
+  gap: 20px; /* Расстояние между текстом и картинкой */
+  background-color: #2b2836; /* Фон для контейнера */
+  padding: 20px; /* Отступы внутри контейнера */
+  border-radius: 15px; /* Скругляем углы */
+  width: 100%; /* Устанавливаем ширину контейнера */
+  max-width: 700px; /* Максимальная ширина для больших экранов */
+  margin: 0 auto; /* Центрируем контейнер */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Тень для визуального эффекта */
+  margin-right: 30px; /* Отступ справа */
+}
+
+/* Центрируем изображение */
+.image-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Занимает всю ширину родительского контейнера */
+}
+
+.image-container2 img {
+  width: 150%; /* Уменьшаем размер картинки */
+  max-width: 400px; /* Максимальная ширина для картинки */
+  height: auto; /* Сохраняем пропорции */
+}
+
+/* Текстовый блок */
+.text-container h2,
+.text-container p,
+.discount {
+  text-align: center; /* Центрируем текст */
+}
+
+.text-container h2 {
+  font-size: 20px; /* Уменьшаем размер заголовка */
+}
+
+.text-container p {
+  font-size: 14px; /* Уменьшаем размер текста */
+  margin-bottom: 10px;
+}
+
+.discount {
+  color: #ffcc00; /* Цвет для скидки */
+  font-weight: bold; /* Полужирный текст */
+  margin-top: 20px; /* Отступ сверху */
+}
+
+/* Стиль для текста приветствия */
+.welcome-message {
+  text-align: center;
+  margin-top: 20px;
+  color: #f7e9ce;
+}
+
+
+/* Стиль для контейнера сообщений */
+.messages {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+ul.messages .message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+/* Стили для успешных сообщений */
+ul.messages .message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Стили для ошибок */
+ul.messages .message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Стили для предупреждений */
+ul.messages .message.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+}
+
+/* Для информативных сообщений */
+ul.messages .message.info {
+  background-color: #d1ecf1;
+  color: #0c5460;
+  border: 1px solid #bee5eb;
+}
+
+/* Иконки для сообщений (если нужно) */
+ul.messages .message.success::before {
+  content: "✔️";
+  margin-right: 10px;
+}
+
+ul.messages .message.error::before {
+  content: "❌";
+  margin-right: 10px;
+}
+
+ul.messages .message.warning::before {
+  content: "⚠️";
+  margin-right: 10px;
+}
+
+ul.messages .message.info::before {
+  content: "ℹ️";
+  margin-right: 10px;
+}

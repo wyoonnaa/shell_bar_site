@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="logo"> 
+      <img src="{% static 'images/лого1.png' %}" alt="Logo" style="width: 60px; height: auto;">
+      <span class="logo-text">SHELL</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About us</a></li>
+        <li><a href="{% url 'contacts' %}">Contacts</a></li>
+        <li><a href="{% url 'registration' %}">Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="about-page">
+    <h1 class="section-title">Our Atmosphere</h1>
+    <div class="carousel-container">
+      <div class="carousel">
+        <img src="{% static 'images/фото2.jpg' %}" alt="Photo 1">
+        <img src="{% static 'images/фото4.jpg' %}" alt="Photo 2">
+        <img src="{% static 'images/фото5.jpg' %}" alt="Photo 3">
+        <img src="{% static 'images/фото6.jpg' %}" alt="Photo 4">
+      </div>
+      <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+      <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+    </div>
+
+    <section class="reviews-section">
+        <h2 class="section-title">Customer Feedback</h2>
+        <div class="reviews-carousel">
+          <div class="review-card">
+            <p class="review-text">"Great atmosphere and amazing cocktails! Will definitely come again."</p>
+            <p class="review-author">- John Doe</p>
+            <span class="review-rating">★★★★★</span>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Loved the cozy vibes and friendly staff!"</p>
+            <p class="review-author">- Emily Smith</p>
+            <span class="review-rating">★★★★★</span>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"A wonderful place for a night out with friends. Drinks are great."</p>
+            <p class="review-author">- Mark Wilson</p>
+            <span class="review-rating">★★★★☆</span>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"Fantastic decor and delicious snacks!"</p>
+            <p class="review-author">- Sarah Johnson</p>
+            <span class="review-rating">★★★★★</span>
+          </div>
+          <div class="review-card">
+            <p class="review-text">"The music and ambiance are top-notch."</p>
+            <p class="review-author">- Michael Brown</p>
+            <span class="review-rating">★★★★☆</span>
+          </div>
+        </div>
+        <button class="carousel-btn review-prev">&#10094;</button>
+        <button class="carousel-btn review-next">&#10095;</button>
+      </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Shell Bar. All rights reserved.</p>
+  </footer>
+
+  <script src="{% static 'js/scrypt.js' %}"></script>
+</body>
+</html>

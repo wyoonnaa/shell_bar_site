@@ -1,0 +1,12 @@
+{
+  "users": [
+    { "name": "Admin", "phone": "+1234567890", "role": "admin" },
+    { "name": "Guest1", "phone": "+1234567891", "role": "guest" },
+    { "name": "Guest2", "phone": "+1234567892", "role": "guest" }
+  ],
+  "tables": [
+    { "id": 1, "capacity": 4, "isBooked": false, "bookedBy": null, "time": null },
+    { "id": 2, "capacity": 6, "isBooked": false, "bookedBy": null, "time": null },
+    { "id": 3, "capacity": 2, "isBooked": false, "bookedBy": null, "time": null }
+  ]
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guest Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Shell Logo" class="logo-image">
+      <span class="logo-text">SHELL</span>
+    </div>
+  </header>
+
+  <main>
+    <h1>Welcome, Guest!</h1>
+    <h2>Book a Table</h2>
+    <form id="guest-booking-form">
+      <input type="number" id="peopleCount" placeholder="Number of people" required>
+      <input type="time" id="time" required>
+      <button type="submit">Book Table</button>
+      <p id="guest-booking-message"></p>
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Shell Bar. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Получаем данные о госте из sessionStorage
+    const users = JSON.parse(sessionStorage.getItem("users"));
+    const currentUser = users.find((u) => u.phone === "+1234567891"); // Пример для гостя
+
+    if (currentUser && currentUser.role === "guest") {
+      const bookingForm = document.getElementById("guest-booking-form");
+      const bookingMessage = document.getElementById("guest-booking-message");
+
+      bookingForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const peopleCount = parseInt(document.getElementById("peopleCount").value);
+        const time = document.getElementById("time").value;
+
+        const database = {
+          tables: [
+            { id: 1, capacity: 4, isBooked: false },
+            { id: 2, capacity: 6, isBooked: false },
+            { id: 3, capacity: 2, isBooked: false },
+          ],
+        };
+
+        const availableTable = database.tables.find(
+          (table) => !table.isBooked && table.capacity >= peopleCount
+        );
+
+        if (availableTable) {
+          availableTable.isBooked = true;
+          currentUser.bookings.push({
+            tableId: availableTable.id,
+            peopleCount,
+            time,
+          });
+
+          sessionStorage.setItem("users", JSON.stringify(users));
+
+          bookingMessage.textContent = `Table ${availableTable.id} successfully booked for ${time}!`;
+          bookingMessage.style.color = "green";
+        } else {
+          bookingMessage.textContent =
+            "No tables available. Please contact admin at +1234567890 for event booking.";
+          bookingMessage.style.color = "red";
+        }
+      });
+    } else {
+      window.location.href = "index.html";
+    }
+  </script>
+  <script src="/Users/mac/Desktop/3_course/veb/попытка 3/scrypt.js"></script>
+
+</body>
+</html>

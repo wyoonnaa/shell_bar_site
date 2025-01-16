@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell Bar</title>
+  <link rel="icon" href="{% static 'images/icons8-shellfish-32.png' %}" type="image/png">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="logo"> 
+      <img src="{% static 'images/лого1.png' %}" alt="Logo" style="width: 60px; height: auto;">
+      <span class="logo-text">SHELL</span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'about' %}">About us</a></li>
+        <li><a href="{% url 'contacts' %}">Contacts</a></li>
+        <li><a href="{% url 'registration' %}">Registration</a></li>
+      </ul>
+      
+      </nav>
+  </header>
+
+  <main>
+    <section id="hero" class="hero">
+      <h1 class="best-bar">Best Bar</h1>
+      <h4 class="bar">Let go of reality and enter our world of the beach. </h4>
+      <div class="images-container">
+        <img src="{% static 'images/коктейль.jpg' %}" alt="Bar Image" class="bar-image">
+        <img src="{% static 'images/бар.avif' %}" alt="Cocktail Image" class="cocktail-image">
+      </div>
+      <h1 class="ever-text">EVER.</h1>
+    </section>
+
+    <div class="white-stripe"></div>
+
+    <section class="large-image-section">
+      <img src="{% static 'images/большая_картинка.png' %}" alt="Large Image" class="large-image">
+    </section>
+
+    <div class="white-stripe"></div>
+
+    <section class="offer-section">
+      <h2 class="advantages-title">В нашем баре:</h2>
+      <div class="offer-images">
+        <div class="offer-item">
+          <img src="{% static 'images/стенд.jpg' %}" alt="Bar" class="offer-image">
+          <div class="circle2">
+            <a href="{% url 'alco' %}" class="menu-link">Bar</a>
+          </div>
+        </div>
+        <div class="offer-item">
+          <img src="{% static 'images/бокал.jpg' %}" alt="Cocktail" class="offer-image">
+          <div class="circle2">
+            <a href="{% url 'coct' %}" class="menu-link">Cocktail</a>
+          </div>
+        </div>
+        <div class="offer-item">
+          <img src="{% static 'images/еда.png' %}" alt="Food" class="offer-image">
+          <div class="circle2">
+            <a href="{% url 'food' %}" class="menu-link">Food</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gradient-section">
+      <h2 class="advantages-title">ПРЕИМУЩЕСТВА</h2>
+      <div class="advantages-container">
+        <img src="{% static 'images/преимущество1.png' %}" alt="Advantage 1" class="advantage-image">
+        <img src="{% static 'images/преимущество2.png' %}" alt="Advantage 2" class="advantage-image">
+        <img src="{% static 'images/преимущество3.png' %}" alt="Advantage 3" class="advantage-image">
+        <img src="{% static 'images/преимущество4.png' %}" alt="Advantage 4" class="advantage-image">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/инста.png' %}" alt="Instagram">
+        </div>
+      </a>
+      <a href="#" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/ютуб.png' %}" alt="YouTube">
+        </div>
+      </a>
+      <a href="#" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/ватсап.png' %}" alt="WhatsApp">
+        </div>
+      </a>
+      <a href="https://t.me/shell_bar" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/тг.png' %}" alt="Telegram">
+        </div>
+      </a>
+    </div>
+    <p>&copy; 2025 Shell Bar. All rights reserved.</p>
+  </footer>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

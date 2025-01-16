@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Shell Bar</title>
+  
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="{% static 'images/лого1.png' %}" alt="Shell Logo" class="logo-image">
+      <span class="logo-text">SHELL</span>
+    </div>
+    <nav>
+        <ul class="nav-links">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About us</a></li>
+          <li><a href="{% url 'contacts' %}">Contacts</a></li>
+          <li><a href="{% url 'registration' %}">Registration</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <main>
+    <section class="large-image-section">
+        <img src="{% static 'images/меню_коктейли.png' %}" alt="Large Image" class="large-image">
+    </section>
+</main>
+
+<footer>
+    <div class="social-icons">
+      <a href="#" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/инста.png' %}" alt="Instagram">
+        </div>
+      </a>
+      <a href="#" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/ютуб.png' %}" alt="YouTube">
+        </div>
+      </a>
+      <a href="#" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/ватсап.png' %}" alt="WhatsApp">
+        </div>
+      </a>
+      <a href="https://t.me/shell_bar" class="social-link">
+        <div class="circle">
+          <img src="{% static 'images/тг.png' %}" alt="Telegram">
+        </div>
+      </a>
+    </div>
+</footer>
+
+<script src="{% static 'js/scrypt.js' %}"></script>
+</body>
+</html>
